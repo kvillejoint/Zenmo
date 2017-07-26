@@ -31,7 +31,9 @@ var User = sequelize.define("user", {
     },
     confirmation_code: {
         type: Sequelize.INTEGER
-    }
+    },
+}, {
+    timestamps: false
 });
 
 // Syncs with DB
