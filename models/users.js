@@ -2,18 +2,12 @@
 // =============================================================
 
 // Requires Sequelize library
-var Sequelize = require("sequelize");
+const Sequelize = require("sequelize");
 // Requires our connection to the DB
-var sequelize = require("../config/connection.js");
+const sequelize = require("../config/connection.js");
 
 // Creates a "User" model that matches up with DB
-var User = sequelize.define("user", {
-    username: {
-        type: Sequelize.STRING
-    },
-    password: {
-        type: Sequelize.STRING
-    },
+const User = sequelize.define("user", {
     first_name: {
         type: Sequelize.STRING
     },
