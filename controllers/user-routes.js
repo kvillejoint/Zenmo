@@ -23,13 +23,13 @@ module.exports = function(app) {
         // POST route for creating a User with the data available to us in req.body
         console.log(req.body);
         db.User.create(req.body).then(function(dbUser) {
-            res.json(dbAuthor);
+            res.json(dbUser);
         });
     });
 
     app.delete("/api/users/:id", function(req, res) {
         // DELETE route for removing the User with the id available to us in req.params.id
-        db.User.destroy({
+        db.Users.destroy({
             where: {
                 id: req.params.id
             }
