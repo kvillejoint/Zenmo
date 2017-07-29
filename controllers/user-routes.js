@@ -1,4 +1,4 @@
-var db = require("../models");
+var db = require("../models/users.js");
 
 module.exports = function(app) {
     // GET route for finding all Users and returning them to the user with res.json
