@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-    // Find all Users and return them to the user with res.json
+    // GET route for finding all Users and returning them to the user with res.json
     app.get("/api/users", function(req, res) {
         db.User.findAll({}).then(function(User) {
             res.json(dbUser);
@@ -9,7 +9,7 @@ module.exports = function(app) {
     });
 
     app.get("/api/users/:id", function(req, res) {
-        // Find one User with the id in req.params.id and return them to the user with res.json
+        // GET route for finding one User with the id in req.params.id and return them to the user with res.json
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -20,7 +20,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/users", function(req, res) {
-        // Create a User with the data available to us in req.body
+        // POST route for creating a User with the data available to us in req.body
         console.log(req.body);
         db.User.create(req.body).then(function(dbUser) {
             res.json(dbAuthor);
@@ -28,7 +28,7 @@ module.exports = function(app) {
     });
 
     app.delete("/api/users/:id", function(req, res) {
-        // Delete the User with the id available to us in req.params.id
+        // DELETE route for removing the User with the id available to us in req.params.id
         db.User.destroy({
             where: {
                 id: req.params.id

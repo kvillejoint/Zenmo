@@ -8,7 +8,7 @@ module.exports = function(app) {
     // GET route for getting all of the Transactions
     app.get("/api/transactions", function(req, res) {
         var query = {};
-        if (req.query.payer_id) {
+        if (req.query.User_id) {
             query.UserId = req.query.User_id;
         }
         db.Transaction.findAll({

@@ -46,10 +46,11 @@ module.exports = function(sequelize, DataTypes) {
                 as: 'payer',
                 foreignKey: {
                    //this should be set to the payer as one foreign key and payee as second foreign key using aliases
+                    allowNull: false
                 },
                 as: 'payee',
                 foreignKey: {
-
+                    allowNull: false
                 }
             });
         };
