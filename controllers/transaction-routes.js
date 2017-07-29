@@ -1,14 +1,25 @@
 // Requiring our models
-var db = require("../models");
+var db = require("../models/transactions.js");
+
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
+    //GET route that sends user to the login page
+    app.get("/", function(req, res) {
+        res.render("login");
+    });
+
+    //GET route that sends the user to the feed page
+    app.get("/feed", function(req, res) {
+        res.render("feed");
+    });
+
     // GET route for getting all of the Transactions
     app.get("/api/transactions", function(req, res) {
         var query = {};
-        if (req.query.payer_id) {
+        if (req.query.User_id) {
             query.UserId = req.query.User_id;
         }
         db.Transaction.findAll({
@@ -18,7 +29,7 @@ module.exports = function(app) {
         });
     });
 
-    // Get route for retrieving a single transaction
+    // GET route for retrieving a single transaction
     app.get("/api/transactions/:id", function(req, res) {
         db.Transaction.findOne({
             where: {

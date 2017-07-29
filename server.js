@@ -24,10 +24,11 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //Imports routes controllers
-const routes = require('./controllers/routes.js');
+require('./controllers/transaction-routes.js')(app);
+require('./controllers/user-routes.js')(app);
 
-app.use('/', routes);
 
 app.listen(PORT);
 console.log('App is listening on PORT ' + PORT);
+
 
