@@ -1,5 +1,12 @@
+html {
+  margin: 0 auto;
+  position: relative;
+  min-height: 100%;
+  color: white;
+}
+
 body {
-  background-color: black;
+  background-color: #565050;
 }
 
 a.navbar-brand.logo {
@@ -10,12 +17,19 @@ a.navbar-brand.logo {
   margin-top: 10;
 }
 
-  /*body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+.footer {
+  font-size: 15px;
+  color: white;
+}
 
-  main {
-    flex: 1 0 auto;
-  }*/
+nav .nav-wrapper {
+  background-color: #565050;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #565050;
+}
