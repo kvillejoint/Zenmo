@@ -1,18 +1,19 @@
-DROP DATABASE IF EXISTS Users;
-CREATE DATABASE Users;
-
-USE Users;
-
-DROP TABLE IF EXISTS Zenmo_Users;
-
-CREATE TABLE Zenmo_Users (
-username varchar(30),
-password varchar(30),
-first_name varchar(60),
-last_name varchar(60),
-phone varchar(10),
-address varchar(60),
-email varchar (60),
-balance decimal(10,4),
-confirmation_code integer(30)
+CREATE DATABASE zenmo;
+USE DATABASE zenmo;
+CREATE TABLE users (
+    id INT(11) AUTO_INCREMENT NOT NULL,
+    email VARCHAR(100),
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    current_value DECIMAL(13,4),
+    logged_in TINYINT(1) NOT NULL,
+    PRIMARY KEY(id)
+);
+CREATE TABLE transactions (
+    id INT(11) AUTO_INCREMENT NOT NULL,
+    email VARCHAR(100),
+    transaction VARCHAR(50),
+    value DECIMAL(13,4),
+    target_user VARCHAR(50),
+    PRIMARY KEY(id)
 );
