@@ -1,65 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-
-    <title>Dashboard</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <!--open payment form-->
-            <form class="col s12">
-                <!--open username input-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="To: Friends username" id="username" type="text" class="validate">
-                    </div>
+<div class="container">
+    <div class="row">
+        <!--open payment form-->
+        <form class="col s12">
+            <!--open username input-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="To: Friends username" id="username" type="text" class="validate">
                 </div>
-                <!--close username input-->
-                <!--open amount & buttons input-->
-                <div class="row">
-                    <div class="col s6 input-field">
-                        <!--update the currency input to materialize theme-->
-                        <input placeholder="$" id="amount" type="number">
-                    </div>
-                    <div class="col s6">
-                        <a class="btn">Pay</a>
-                        <a class="btn">Request</a>
-                    </div>
+            </div>
+            <!--close username input-->
+            <!--open amount & buttons input-->
+            <div class="row">
+                <div class="col s6 input-field">
+                    <!--update the currency input to materialize theme-->
+                    <input placeholder="$" id="amount" type="number">
                 </div>
-                <!--close amount & buttons input-->
-            </form>
-            <!--close payment form-->
-        </div>
-        <!--open recent transactions card-->
-        <div class="row">
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Recent Transactions</span>
-                        
-                        {{#each transactions}}
-                            <p>{{name}} {{transaction}} {{amount}} to {{newUser}}</p>
-                        {{/each}}
-                        <!--example recent transaction-->
-                        <p class="transaction">Bridgete paid $75 to Art</p>
-                    </div>
+                <div class="col s6">
+                    <a class="btn">Pay</a>
+                    <a class="btn">Request</a>
+                </div>
+            </div>
+            <!--close amount & buttons input-->
+        </form>
+        <!--close payment form-->
+    </div>
+    <!--open recent transactions card-->
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Recent Transactions</span> {{#each transactions}}
+                    <p>{{name}} {{transaction}} {{amount}} to {{newUser}}</p>
+                    {{/each}}
+                    <!--example recent transaction-->
+                    <p class="transaction">Bridgete paid $75 to Art</p>
                 </div>
             </div>
         </div>
-        <!--close recent transactions card-->
     </div>
-</body>
-
-</html>
+    <!--close recent transactions card-->
+</div>
