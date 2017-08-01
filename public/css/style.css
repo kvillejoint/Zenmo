@@ -6,8 +6,9 @@ html {
 }
 
 body {
-  background-color: #565050;
+  background-color: #88be68;
 }
+
 .z-depth-0 {
   -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
   -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
@@ -29,7 +30,7 @@ nav .brand-logo.center {
 }
 
 nav .nav-wrapper {
-  background-color: #565050;
+  background-color: #88be68;
 }
 
 .page-footer {
@@ -37,5 +38,5 @@ nav .nav-wrapper {
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #565050;
+  background-color: #88be68;
 }
