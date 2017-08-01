@@ -8,6 +8,11 @@ html {
 body {
   background-color: #565050;
 }
+.z-depth-0 {
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
+}
 
 nav .brand-logo.center {
   font-family: 'Fira Sans', sans-serif;
@@ -15,7 +20,7 @@ nav .brand-logo.center {
   text-align: center;
   margin: 0;
   margin-top: 10;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .footer {
