@@ -6,24 +6,40 @@ html {
 }
 
 body {
-  background-color: #565050;
+  background-color: #88be68;
 }
 
-a.navbar-brand.logo {
+.container .row {
+  margin-top: 10px;
+}
+.z-depth-0 {
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
+}
+
+nav .brand-logo.center {
   font-family: 'Fira Sans', sans-serif;
-  font-size: 20px;
+  font-size: 40px;
   text-align: center;
   margin: 0;
-  margin-top: 10;
-}
-
-.footer {
-  font-size: 15px;
-  color: white;
+  margin-top: 20px;
+  text-transform: lowercase;
 }
 
 nav .nav-wrapper {
-  background-color: #565050;
+  background-color: #88be68;
+}
+
+ul:not(.browser-default) {
+    padding-left: 0;
+    padding-right: 50px;
+    list-style-type: none;
+}
+
+.footer {
+  font-size: 10px;
+  color: white;
 }
 
 .page-footer {
@@ -31,5 +47,22 @@ nav .nav-wrapper {
   bottom: 0;
   width: 100%;
   text-align: center;
-  background-color: #565050;
+  background-color: #88be68;
 }
+
+#login-button {
+  margin-left: 25%;
+}
+
+#login-container{
+  margin-top: 30%;
+}
+/* label focus color */
+ .input-field input:focus + label {
+   color: green !important;
+ }
+ /* label underline focus color */
+ .row .input-field input:focus {
+   border-bottom: 1px solid white !important;
+   box-shadow: 0 1px 0 0 white !important
+ }
