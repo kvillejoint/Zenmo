@@ -1,9 +1,12 @@
-var db = require("../models/users.js");
+var db = require("../models");
+// console.log(db)
+
 
 module.exports = function(app) {
     // GET route for finding all Users and returning them to the user with res.json
     app.get("/api/users", function(req, res) {
-        db.User.findAll({}).then(function(User) {
+      console.log("Getting all users");
+        db.User.findAll({}).then(function(dbUser) {
             res.json(dbUser);
         });
     });
@@ -29,7 +32,7 @@ module.exports = function(app) {
 
     app.delete("/api/users/:id", function(req, res) {
         // DELETE route for removing the User with the id available to us in req.params.id
-        db.Users.destroy({
+        db.User.destroy({
             where: {
                 id: req.params.id
             }
