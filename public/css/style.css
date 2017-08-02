@@ -9,6 +9,9 @@ body {
   background-color: #88be68;
 }
 
+.container .row {
+  margin-top: 10px;
+}
 .z-depth-0 {
   -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
   -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
@@ -51,6 +54,9 @@ ul:not(.browser-default) {
   margin-left: 25%;
 }
 
+#login-container{
+  margin-top: 30%;
+}
 /* label focus color */
  .input-field input:focus + label {
    color: green !important;
