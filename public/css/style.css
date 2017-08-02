@@ -20,17 +20,23 @@ nav .brand-logo.center {
   font-size: 40px;
   text-align: center;
   margin: 0;
-  margin-top: 10;
+  margin-top: 20px;
   text-transform: lowercase;
-}
-
-.footer {
-  font-size: 15px;
-  color: white;
 }
 
 nav .nav-wrapper {
   background-color: #88be68;
+}
+
+ul:not(.browser-default) {
+    padding-left: 0;
+    padding-right: 50px;
+    list-style-type: none;
+}
+
+.footer {
+  font-size: 10px;
+  color: white;
 }
 
 .page-footer {
@@ -39,4 +45,8 @@ nav .nav-wrapper {
   width: 100%;
   text-align: center;
   background-color: #88be68;
+}
+
+#login-button {
+  margin-left: 25%;
 }
