@@ -1,11 +1,5 @@
 // Dependencies
 // =============================================================
-
-// Requires Sequelize library
-const Sequelize = require("sequelize");
-// Requires our connection to the DB
-const sequelize = require("../config/connection.js");
-
 // Creates a "Transaction" model that matches up with DB
 module.exports = function(sequelize, DataTypes) {
     const Transaction = sequelize.define('Transaction', {
@@ -36,24 +30,22 @@ module.exports = function(sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
-        },
-    }, {
-        timestamps: false
+        }
     });
 
-    Transaction.associate = function(models) {
-        Transaction.belongsTo(models.User, {
-            as: 'payer',
-            foreignKey: {
-                //this should be set to the payer as one foreign key and payee as second foreign key using aliases
-                allowNull: false
-            },
-            as: 'payee',
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
+    // Transaction.associate = function(models) {
+    //     Transaction.belongsTo(models.User, {
+    //         as: 'payer',
+    //         foreignKey: {
+    //             //this should be set to the payer as one foreign key and payee as second foreign key using aliases
+    //             allowNull: false
+    //         },
+    //         as: 'payee',
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+    // };
 
     return Transaction;
 };
