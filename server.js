@@ -15,6 +15,9 @@ const app = express();
 //Serves static content for the app from the 'public' directory
 app.use(express.static(__dirname + '/public'));
 
+//Serves static content for the app from the 'logic' directory
+app.use(express.static(__dirname + '/logic'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Sets handlebars as the view engine
