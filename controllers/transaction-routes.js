@@ -29,8 +29,25 @@ module.exports = function(app) {
 
     // POST route for saving a new transaction
     app.post("/api/transactions/pay", function(req, res) {
-        db.Transaction.create(req.body).then(function(dbTransaction) {
-            res.json(dbTransaction);
+        db.Transaction.create(req.body)
+        .then(function(dbTransaction) {
+            res.dbTransaction = dbTransaction; // saving this for later
+            return db.User.findOne({ where: { email: req.body.payer_email }}); // chaining promises together
+        })
+        .then(function(sender) {
+            return sender.decrement('current_balance', {by: req.body.dollar_amount}); //
+        })
+        .then(function() {
+            return db.User.findOne({ where: { email: req.body.payee_email }});
+        })
+        .then(function(receiver) {
+            return receiver.increment('current_balance', {by: req.body.dollar_amount});
+        })
+        .then(function() {
+            res.json(res.dbTransaction) // returning the transaction record that we saved before
+        })
+        .catch(function(error) {
+            console.log(`Error: ${ error }`); // Preventing app crash on db failure
         });
     });
 
