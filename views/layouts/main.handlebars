@@ -16,17 +16,18 @@
     <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900i" rel="stylesheet">
 </head>
 
 <body>
     <!-- navbar open-->
-    <nav>
+    <nav class="z-depth-0">
         <div class="nav-wrapper">
             <a href="#" class="brand-logo center">Zenmo</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Current Balance: {{balance}}</a></li>
-                <li><a href="#">{{userName}}</a></li>
+                <li><a href="#"><i class="material-icons left">attach_money</i>{{balance}}</a></li>
+                <li><a href="#"><i class="material-icons left">account_box</i>{{userName}}</a></li>
                 <li><a href="#">Sign out</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
@@ -54,7 +55,6 @@
         $(".button-collapse").sideNav();
         $('select').material_select();
     })
-
     function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -68,14 +68,12 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
     };
-
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function () {
             console.log('User signed out.');
         });
     }
-
 </script>
 
 </html>
