@@ -21,9 +21,6 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-
-
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900i" rel="stylesheet">
 </head>
 
@@ -31,33 +28,40 @@
     <!-- navbar open-->
     <nav class="z-depth-0">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Zenmo</a>
+            <a href="#" class="brand-logo center"><img src="img/green_logo.png" height="50px" width="50px">Zenmo</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#"><i class="material-icons left">attach_money</i>{{balance}}</a></li>
-                <li><a href="#"><i class="material-icons left">account_box</i>{{userName}}</a></li>
-                <li><a href="#">Sign out</a></li>
+                <li><a href="#"><i class="material-icons left" title="Balance">attach_money</i>{{balance}}</a></li>
+                <li><a href="#"><i class="material-icons left" title="User">account_box</i>{{userName}}</a></li>
+                <li><a href="#" title="Sign Out">Sign Out</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="#">Current Balance: {{balance}}</a></li>
-                <li><a href="#">{{userName}}</a></li>
+                <li><a href="#" title="User">User: {{userName}}</a></li>
                 <li><a href="#">Sign out</a></li>
             </ul>
         </div>
     </nav>
     <!-- navbar close-->
+<br />
+<br />
 
     {{{body}}}
-
-
-    <footer class="page-footer">
-        <h5 class="footer">Powered by Nunchuk Robots</h5>
-    </footer>
+<br />
+<br />
 
 </body>
+<!-- Footer -->
+<footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container center white-text">
+                   Powered by Nunchuk Robots © 2017
+                </div>
+            </div>
+</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js">{{!}}</script>
-<script src="feed.js"><{{!}}/script>
+<script scr="feed.js"><{{!}}/script>
 <script src="google-login.js"><{{!}}/script>
 
 
