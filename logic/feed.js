@@ -16,13 +16,14 @@ console.log('feed.js connected');
 $("#pay").on("click", function () {
     console.log("pay button clicked");
     $.ajax({
-        url: '/api/transactions/update/', // Be careful re any captured params you might need
+        url: '/api/transactions/pay', // Be careful re any captured params you might need
         method: 'POST',
         data: {
-            // email: {{}}
-            payee_email: $("#targetUser").val(),
+            payer_email: window.localStorage.getItem('email'),
+            payee_email: $("#username").val(),
             dollar_amount: $("#amount").val(),
-            // transaction: "pay"
+            transaction_type: "pay"
+            // updatedAt: Date.now()
         }
     }).then(function (result) {
         // .then call is not necessary
@@ -32,3 +33,22 @@ $("#pay").on("click", function () {
         // add a div w/ a red border explaining the error
     })
 })
+
+$(document).ready(function() {
+    console.log("ding dong");
+    $.ajax({
+        url:'/api/transactions'
+    }).then(function(result) {
+        console.log(result);
+        // render transactions
+        renderTransactions(result);
+    })
+})
+
+function renderTransactions(dbResult) {
+    // prepend all transaction data from the object
+        // create html elements for each item 
+        // for loop through object 
+    let transaction = $("<div>");
+    console.log("dbResult is " + dbResult);
+}
