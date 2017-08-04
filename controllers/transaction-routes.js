@@ -6,9 +6,9 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function (app) {
-
+    
     // GET route for getting all of the Transactions
-    app.get("/api/transactions", function (req, res) {
+    app.get("/feed", function (req, res) {
         db.Transaction.findAll({})
             .then(function (dbTransaction) {
                 // var transactions = {
@@ -17,7 +17,10 @@ module.exports = function (app) {
                 //     dollar_amount: dollar_amount,
                 //     payee_email: payee_email
                 // }
-                res.json(dbTransaction);
+                // res.json(dbTransaction);
+                res.render("feed", {
+                    Transaction: dbTransaction
+                });
             });
     });
 
