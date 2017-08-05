@@ -87,3 +87,11 @@ ul:not(.browser-default) {
    box-shadow: 0 1px 0 0 white !important
  }
 
+.card .card-title {
+  font-weight: bold;
+}
+
+ .card-content {
+  color: black;
+ }
+

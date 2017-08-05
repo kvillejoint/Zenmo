@@ -41,9 +41,10 @@
             <div class="card transactions-card">
                 <div class="card-content">
                     <span class="card-title">Recent Transactions</span>
+                    <hr>
                    {{#each Transaction}}
                     <p> {{this.payer_email}} paid {{this.dollar_amount}} to {{this.payee_email}}</p>
-                     <hr>
+                    <br>
                     {{/each}}
                 </div>
             </div>
