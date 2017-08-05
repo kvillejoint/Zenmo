@@ -11,12 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/arfusop/Zenmo.git"
   },
-  "author": "",
+  "author": "Phil A",
   "license": "ISC",
-  "bugs": {
-    // "url": "https://github.com/arfusop/Zenmo/issues"
-  },
-  // "homepage": "https://github.com/arfusop/Zenmo#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
