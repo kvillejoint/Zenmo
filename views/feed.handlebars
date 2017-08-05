@@ -43,7 +43,7 @@
                     <span class="card-title">Recent Transactions</span>
                     <hr>
                    {{#each Transaction}}
-                    <p> {{this.payer_email}} paid ${{this.dollar_amount}} to {{this.payee_email}} | {{this.createdAt}}</p>
+                    <p> {{this.payer_email}} {{this.transaction_type}} ${{this.dollar_amount}} {{this.function_word}} {{this.payee_email}} | {{this.createdAt}}</p>
                     <br>
                     {{/each}}
                 </div>

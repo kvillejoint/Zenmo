@@ -24,6 +24,10 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1]
             }
         },
+        function_word: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         payee_email: {
             type: DataTypes.STRING,
             allowNull: false,

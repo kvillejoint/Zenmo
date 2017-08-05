@@ -22,7 +22,7 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/users", function(req, res) {
+    app.post("/api/users/create", function(req, res) {
         // POST route for creating a User with the data available to us in req.body
         console.log(req.body);
         db.User.create(req.body).then(function(dbUser) {
@@ -30,7 +30,7 @@ module.exports = function(app) {
         });
     });
 
-    app.delete("/api/users/:id", function(req, res) {
+    app.delete("/api/users/delete/:id", function(req, res) {
         // DELETE route for removing the User with the id available to us in req.params.id
         db.User.destroy({
             where: {
