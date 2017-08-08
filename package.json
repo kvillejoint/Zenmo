@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/arfusop/Zenmo.git"
   },
-  "author": "Phil A",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",

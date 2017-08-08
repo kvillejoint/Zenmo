@@ -22,8 +22,7 @@ $("#pay").on("click", function () {
             payer_email: window.localStorage.getItem('email'),
             payee_email: $("#username").val(),
             dollar_amount: $("#amount").val(),
-            transaction_type: "paid",
-            function_word: "to"
+            transaction_type: "pay"
             // updatedAt: Date.now()
         }
     }).then(function (result) {
@@ -35,31 +34,10 @@ $("#pay").on("click", function () {
     })
 })
 
-$("#request").on("click", function () {
-    console.log("request button clicked");
-    $.ajax({
-        url: '/api/transactions/request', // Be careful re any captured params you might need
-        method: 'POST',
-        data: {
-            payer_email: window.localStorage.getItem('email'),
-            payee_email: $("#username").val(),
-            dollar_amount: $("#amount").val(),
-            transaction_type: "requested",
-            function_word: "from"
-            // updatedAt: Date.now()
-        }
-    }).then(function (result) {
-        // .then call is not necessary
-        console.log(result);
-    }).fail(function (error) {
-        console.error(error);
-        // add a div w/ a red border explaining the error
-    })
-})
 $(document).ready(function() {
     console.log("ding dong");
     $.ajax({
-        url:'/feed'
+        url:'/api/transactions'
     }).then(function(result) {
         console.log(result);
         // render transactions

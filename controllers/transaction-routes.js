@@ -73,43 +73,6 @@ module.exports = function (app) {
             });
     });
 
-    // POST route for saving a new transaction
-    app.post("/api/transactions/request", function (req, res) {
-        console.log(req.body);
-        db.Transaction.create(req.body)
-            .then(function (dbTransaction) {
-                res.dbTransaction = dbTransaction; // saving this for later
-                return db.User.findOne({
-                    where: {
-                        email: req.body.payer_email
-                    }
-                }); // chaining promises together
-            })
-            .then(function (sender) {
-                return sender.increment('current_balance', {
-                    by: req.body.dollar_amount
-                }); //
-            })
-            .then(function () {
-                return db.User.findOne({
-                    where: {
-                        email: req.body.payee_email
-                    }
-                });
-            })
-            .then(function (receiver) {
-                return receiver.decrement('current_balance', {
-                    by: req.body.dollar_amount
-                });
-            })
-            .then(function () {
-                res.json(res.dbTransaction) // returning the transaction record that we saved before
-            })
-            .catch(function (error) {
-                console.log(`Error: ${ error }`); // Preventing app crash on db failure
-            });
-    });
-
     // DELETE route for deleting a single transaction
     app.delete("/api/transactions/:id", function (req, res) {
         db.Transaction.destroy({
